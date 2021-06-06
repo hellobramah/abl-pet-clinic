@@ -1,13 +1,8 @@
 package hellobramah.springframework.ablpetclinic.services;
 
-import hellobramah.springframework.ablpetclinic.Model.*;
 
-import java.util.Set;
+import hellobramah.springframework.ablpetclinic.model.Vet;
 
-public interface VetService {
-    Vet findById(long Id);
+public interface VetService extends CrudService<Vet, Long> {
 
-    Vet save(Vet vet);
-
-    Set<Vet> findAll();
 }
