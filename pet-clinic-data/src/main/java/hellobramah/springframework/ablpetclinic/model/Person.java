@@ -1,4 +1,4 @@
-package hellobramah.springframework.ablpetclinic.Model;
+package hellobramah.springframework.ablpetclinic.model;
 
 public class Person extends BaseEntity {
     private String firstName;

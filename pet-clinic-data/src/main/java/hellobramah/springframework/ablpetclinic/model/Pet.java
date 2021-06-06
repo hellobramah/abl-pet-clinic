@@ -1,4 +1,4 @@
-package hellobramah.springframework.ablpetclinic.Model;
+package hellobramah.springframework.ablpetclinic.model;
 
 import java.time.LocalDate;
 
