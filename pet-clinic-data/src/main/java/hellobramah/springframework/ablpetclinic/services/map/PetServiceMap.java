@@ -3,9 +3,10 @@ package hellobramah.springframework.ablpetclinic.services.map;
 
 import hellobramah.springframework.ablpetclinic.model.Pet;
 import hellobramah.springframework.ablpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
