@@ -1,6 +1,7 @@
 package hellobramah.springframework.ablpetclinic.bootstrap;
 
 import hellobramah.springframework.ablpetclinic.model.Owner;
+import hellobramah.springframework.ablpetclinic.model.Pet;
 import hellobramah.springframework.ablpetclinic.model.PetType;
 import hellobramah.springframework.ablpetclinic.model.Vet;
 import hellobramah.springframework.ablpetclinic.services.OwnerService;
@@ -9,6 +10,8 @@ import hellobramah.springframework.ablpetclinic.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -44,12 +47,32 @@ public class DataLoader implements CommandLineRunner {
 
         owner1.setFirstName("Jet");
         owner1.setLastName("Li");
+        owner1.setAddress("15, Snapphanevagen");
+        owner1.setCity("Karlskrona");
+        owner1.setTelephone("+46557595400");
         ownerService.save(owner1);
+
+        Pet JetsPet = new Pet();
+        JetsPet.setPetType(saveDogPetType);
+        JetsPet.setOwner(owner1);
+        JetsPet.setBirthDate(LocalDate.now());
+        JetsPet.setName("Pip");
+        owner1.getPets().add(JetsPet);
 
 
         owner2.setFirstName("Jackie");
         owner2.setLastName("Chan");
+        owner2.setAddress("D33 Parrot Close");
+        owner2.setCity("Tema");
+        owner2.setTelephone("+233557595400");
         ownerService.save(owner2);
+
+        Pet JackiesPet = new Pet();
+        JackiesPet.setPetType(saveCatPetType);
+        JackiesPet.setOwner(owner2);
+        JackiesPet.setBirthDate(LocalDate.now());
+        JackiesPet.setName("Mister");
+        owner2.getPets().add(JackiesPet);
 
         System.out.println("Loading Owners.....");
 
