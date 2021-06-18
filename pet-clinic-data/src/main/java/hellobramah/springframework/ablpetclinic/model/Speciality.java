@@ -1,6 +1,6 @@
 package hellobramah.springframework.ablpetclinic.model;
 
-public class Specialty {
+public class Speciality extends BaseEntity{
     private String description;
 
     public String getDescription() {
